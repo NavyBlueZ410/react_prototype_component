@@ -21,8 +21,11 @@ function Login() {
     e.preventDefault()
     const { name,value } = e.target
     setLogin({...login,[name]:value})
-
-    const isValid = Object.values(login).every((value) => value.trim().length > 0);
+    
+    const isValid = Object.values({
+      ...login,
+      [name]: value
+    }).every((val) => val.trim() !== "");
     // console.log(isValid)
     setValidate(isValid);
   }
@@ -37,9 +40,8 @@ function Login() {
       alert("Please input: password")
       return
     }
-    
     if(login['username'] !== fakeUser['username'] && login['password'] !== fakeUser['password']){
-      alert('Something wrong?')
+      alert('Something wrong? Please check username && password again.')
       return
     }else{
       console.log("you can login.....")
@@ -48,7 +50,10 @@ function Login() {
 
   return (
     <>
-      <span className={styles.titleContent}>Prototype Code Component</span>
+      <span className={styles.titleContent}>
+        Prototype Code Component <br/>
+        This pototype not support responsive
+      </span>
       <div className={styles.contentLogin}>
           <h1>Login</h1>
           <Input 
