@@ -1,0 +1,26 @@
+.buttonCustom,.buttonCustomInvalidate{
+    width: 100%;
+    padding: 0.5rem;
+    font-size: calc(18px + 0.05vw);
+    border-radius: 0.5rem;
+    border: none;
+    color: #fff;
+    background-size: 200% auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.buttonCustom{
+    background-image: linear-gradient(to right, #1A2980 0%, #26D0CE  51%, #1A2980  100%); 
+}
+.buttonCustomInvalidate{
+    background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%);
+}
+.buttonCustom:hover,.buttonCustomInvalidate:hover {
+    background-position: right center;
+    text-decoration: none;
+    transition: 0.5s ease;
+}
+
+ 
+ 
