@@ -1,0 +1,26 @@
+.contentSelect select{
+    width: 100%;
+    font-size: calc(18px - 0.05vw);
+    border-radius: 0.5rem;
+    background-color: #e7e6e6c7;
+    padding: 0.5rem 0.5rem;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("https://www.svgrepo.com/show/394914/downwards-arrow-to-bar.svg");
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem) center;
+}
+.contentSelect select:focus{
+    outline: none;
+}
+.contentSelect option{
+    background-color: #e7e6e6c7;
+}
+.validate{
+    border: 1px solid rgb(104, 175, 104);
+}
+.invalidate{
+    border: 1px solid rgb(216, 108, 108);
+    color: #797575;
+}

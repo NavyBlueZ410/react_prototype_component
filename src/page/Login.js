@@ -75,6 +75,7 @@ function Login() {
             value={login['password']}
             onChange={handleOnChange} />
             <div className={styles.contentText}>
+                <Link to="/register" >Register?</Link>
                 <Link to="">Forgot password?</Link>
             </div>
             <Button 
