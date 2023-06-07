@@ -5,6 +5,7 @@ import Register from './page/Register';
 import Datatable from './page/Datatable';
 import LoginApi from './page/LoginApi';
 import HomePageApi from './page/HomePageApi';
+import UserList from './page/UserList';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/datatable" element={<Datatable/>}></Route>
           <Route path="/loginapi" element={<LoginApi/>}></Route>
           <Route path="/homepageapi" element={<HomePageApi/>}></Route>
+          <Route path="/userlist" element={<UserList/>}></Route>
         </Routes>
       </BrowserRouter>     
     </div>

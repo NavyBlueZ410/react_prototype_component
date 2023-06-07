@@ -1,0 +1,19 @@
+.contentUserList{
+    max-width: 800px;
+    margin: 3rem auto 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.contentUserList h1{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.cotentCreateUser{
+    width: 450px;
+    margin: 0 auto;
+}
+.cotentCreateUser h2{
+    margin-bottom: 1rem;
+}
