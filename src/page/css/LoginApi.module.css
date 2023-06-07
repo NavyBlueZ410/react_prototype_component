@@ -1,0 +1,13 @@
+.contentLoginApi{
+    max-width: 450px;
+    height: 500px;
+    margin: 3rem auto 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.contentLoginApi h1{
+    text-align: center;
+    margin-bottom: 2rem;
+}

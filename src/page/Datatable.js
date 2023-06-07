@@ -7,7 +7,6 @@ import { useState } from 'react';
 import styles from './css/Datatable.module.css'
 
 function Datatable() {
-  // console.log(provinces)
 
   const th = [
     {
