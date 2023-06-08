@@ -35,7 +35,11 @@ function UserList() {
     {
       name: "ID",
       selector: row=>row.id,
-      sortable:true
+      sortable:true,
+    },
+    {
+      name: "Avatar",
+      selector: row=><img className={styles.imgDataTable} src={row.avatar} alt=''/>,
     },
     {
       name: "Name",

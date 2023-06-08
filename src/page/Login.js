@@ -56,10 +56,6 @@ function Login() {
       </span>
       <div className={styles.contentLogin}>
           <h1>Login</h1>
-          <div className={styles.contentLink}>
-            <Link to="/datatable" >Datatable</Link>
-            <Link to="/loginapi" >Login Api</Link>
-          </div>
           <Input 
             style={{marginBottom:"1rem"}}
             icon={<BiUser/>} 

@@ -41,11 +41,50 @@ export function createUser(fname,lname,username,password,email,avatar){
             "email":email,
             "avatar":avatar
         }
-
         let headers = {
             'Content-Type': 'application/json'
         }
         axios.post(url,body,{headers:headers}).then(res => {
+            resolve(res)
+        }).catch((err) => {
+            resolve(err)
+        })
+    })
+}
+
+export function updateUser(id,fname,lname,username,password,email,avatar){
+    return new Promise(resolve => {
+        let url = `https://www.melivecode.com/api/users/create`
+        let body = {
+            "id":id,
+            "fname": fname,
+            "lname":lname,
+            "password":password,
+            "username":username,
+            "email":email,
+            "avatar":avatar
+        }
+        let headers = {
+            'Content-Type': 'application/json'
+        }
+        axios.put(url,body,{headers:headers}).then(res => {
+            resolve(res)
+        }).catch((err) => {
+            resolve(err)
+        })
+    })
+}
+
+export function deleteUser(id){
+    return new Promise(resolve => {
+        let url = `https://www.melivecode.com/api/users/create`
+        let body = {
+            "id":id
+        }
+        let headers = {
+            'Content-Type': 'application/json'
+        }
+        axios.put(url,body,{headers:headers}).then(res => {
             resolve(res)
         }).catch((err) => {
             resolve(err)

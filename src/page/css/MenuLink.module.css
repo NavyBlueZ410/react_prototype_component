@@ -1,0 +1,26 @@
+.contentMenuLink{
+    max-width: 500px;
+    margin: 3rem auto 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    display: flex;
+    flex-direction: column;
+}
+.contentMenuLink h1{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.contentMenuLink a{
+    text-decoration: none;
+    background-color:rgb(89, 174, 189);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+.contentMenuLink a:hover{
+    background-color:rgb(49, 103, 113);
+    transition: 0.3s ease;
+}

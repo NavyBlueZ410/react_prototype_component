@@ -1,6 +1,6 @@
 .contentUserList{
     max-width: 800px;
-    margin: 3rem auto 0 auto;
+    margin: 3rem auto 3rem auto;
     background-color: #fff;
     padding: 2rem;
     border-radius: 1rem;
@@ -16,4 +16,8 @@
 }
 .cotentCreateUser h2{
     margin-bottom: 1rem;
+}
+.imgDataTable{
+    width: 50px;
+    display: block;
 }

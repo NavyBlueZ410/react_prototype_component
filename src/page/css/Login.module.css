@@ -24,19 +24,3 @@
     color: #000;
     cursor: pointer;
 }
-.contentLink{
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: space-between;
-}
-.contentLink a{
-    text-decoration: none;
-    background-color:rgb(89, 174, 189);
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    color: #fff;
-}
-.contentLink a:hover{
-    background-color:rgb(49, 103, 113);
-    transition: 0.3s ease;
-}
