@@ -11,6 +11,8 @@ function MenuLink() {
         <Link to="/loginapi">Login Api</Link>
         <Link to="/userlist">User List</Link>
         <Link to="/datatable">Datatable</Link>
+        <Link to="/upimg">Upload & Preview Img</Link>
+        <Link to="/uselocation">Test Uselocation</Link>
     </div>
   )
 }

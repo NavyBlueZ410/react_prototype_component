@@ -90,5 +90,16 @@ export function deleteUser(id){
             resolve(err)
         })
     })
+}
 
+export function findUser(id){
+    return new Promise(resolve => {
+        let url = `https://www.melivecode.com/api/users/${id}`
+        let headers = {}
+        axios.get(url,{headers:headers}).then(res => {
+            resolve(res)
+        }).catch((err) => {
+            resolve(err)
+        })
+    })
 }

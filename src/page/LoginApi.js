@@ -40,7 +40,7 @@ function LoginApi() {
         }
 
         let res =  await api.login(login['username'],login['password'])
-        if(res['status'] == 200){
+        if(res['status'] === 200){
             let data = res['data']['user']
             await localStorage.setItem('accessToken',res['data']['accessToken'])
             await localStorage.setItem('avart',data['avatar'])

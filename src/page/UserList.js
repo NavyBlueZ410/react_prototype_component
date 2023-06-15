@@ -10,6 +10,7 @@ import styles from './css/UserList.module.css'
 
 function UserList() {
   const [users,setUsers] = useState([])
+  const [buttonSubmit,setButtonSubmit] = useState("Create User")
   const [createUser,setCreateUser] = useState({
     username:"",
     password:"",
@@ -22,7 +23,7 @@ function UserList() {
 
   const getUser = async() => {
     let res = await api.getUser()
-    if(res['status'] == 200){
+    if(res['status'] === 200){
         setUsers(res['data'])
     } 
   }
@@ -30,6 +31,7 @@ function UserList() {
   useEffect(() => {
     getUser()
   },[])
+
 
   const th = [
     {
@@ -44,6 +46,11 @@ function UserList() {
     {
       name: "Name",
       selector: row=>`${row.fname} ${row.lname}`,
+      sortable:true
+    },
+    {
+      name: "Setting",
+      selector: row=><div><button onClick={() => handleSettingForm("Edit",row.id)}>Edit</button> <button>Delete</button> </div>,
       sortable:true
     }
   ]
@@ -87,7 +94,7 @@ function UserList() {
     }
 
     let res = await api.createUser(createUser['fname'],createUser['lname'],createUser['username'],createUser['password'],createUser['email'],createUser['avatar'])
-    if(res['status'] == 200){
+    if(res['status'] === 200){
         await alert("Create User Success.")
         window.location.reload();
 
@@ -96,11 +103,89 @@ function UserList() {
     }
   }
 
+  const handleSettingForm = async(form,id) => {
+    setButtonSubmit(form)
+    let res = ""
+    let data = ""
+    switch(form) {
+      case "Edit":
+        res = await api.findUser(id)
+        if(res['status'] === 200){
+          data = res['data']['user']
+          await setCreateUser({
+            username:data['username'],
+            password:data['password'],
+            fname:data['fname'],
+            lname:data['lname'],
+            email:data['email'],
+            avatar:data['avatar']           
+          })
+          await setValidate(true)
+        }
+        break;
+        case "Create User":
+          await setCreateUser({
+            username:"",
+            password:"",
+            fname:"",
+            lname:"",
+            email:"",
+            avatar:""           
+          })
+          await setValidate(false)
+        break;
+      default:
+    }
+  }
+
+  const handleSubmitEditUser = async() => {
+    // console.log("Edit User......")
+    if(!createUser['username']){
+      alert("Please input: username.")
+      return
+    }
+    if(!createUser['password']){
+        alert("Please input: password.")
+        return
+    }
+    if(!createUser['fname']){
+        alert("Please input: fname.")
+        return
+    }
+    if(!createUser['lname']){
+        alert("Please input: lname.")
+        return
+    }
+    if(!createUser['email']){
+        alert("Please input: email.")
+        return
+    }
+    if(!createUser['avatar']){
+        alert("Please input: Url img.")
+        return
+    }
+
+    let res = await api.updateUser(createUser['fname'],createUser['lname'],createUser['username'],createUser['password'],createUser['email'],createUser['avatar'])
+    if(res['status'] === 200){
+        await alert("Edit User Success.")
+        window.location.reload();
+
+    }else{
+        console.log(res['response']['data']['message'])
+    }    
+  }
+
   return (
     <div className={styles.contentUserList}>
         <h1>UserList</h1>
         <div className={styles.cotentCreateUser}>
             <h2>Create User</h2>
+            {
+              buttonSubmit === "Create User" ? ("") : 
+              (<div className={styles.contentButtonCreateUser}>
+              <button onClick={()=>handleSettingForm("Create User")}>Create User</button>
+              </div>)
+            }
             <Input
                 style={{marginBottom:"1rem"}}
                 icon={<BiUser/>}
@@ -158,8 +243,8 @@ function UserList() {
             />
             <Button
                 style={{marginBottom:"2rem"}}
-                text={"Create User"}
-                onClick={handleSubmitCreateUser}
+                text={buttonSubmit}
+                onClick={buttonSubmit === "Create User" ? handleSubmitCreateUser : handleSubmitEditUser}
                 validate={validate}
             />
         </div>

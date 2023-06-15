@@ -7,6 +7,10 @@ import LoginApi from './page/LoginApi';
 import HomePageApi from './page/HomePageApi';
 import UserList from './page/UserList';
 import MenuLink from './page/MenuLink';
+import UPImg from './page/UPImg';
+import UseLocation from './page/UseLocation';
+import Location1 from './page/Location1';
+import Location2 from './page/Location2';
 
 function App() {
   return (
@@ -20,6 +24,10 @@ function App() {
           <Route path="/loginapi" element={<LoginApi/>}></Route>
           <Route path="/homepageapi" element={<HomePageApi/>}></Route>
           <Route path="/userlist" element={<UserList/>}></Route>
+          <Route path="/upimg" element={<UPImg/>}></Route>
+          <Route path="/uselocation" element={<UseLocation/>}></Route>
+          <Route path="/location1" element={<Location1/>}></Route>
+          <Route path="/location2" element={<Location2/>}></Route>
         </Routes>
       </BrowserRouter>     
     </div>

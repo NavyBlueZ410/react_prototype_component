@@ -21,3 +21,19 @@
     width: 50px;
     display: block;
 }
+.contentButtonCreateUser{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 1rem;
+}
+.contentButtonCreateUser button{
+    background-color:rgb(89, 174, 189);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    border: none;
+}
+.contentButtonCreateUser button:hover{
+    background-color:rgb(49, 103, 113);
+    transition: 0.3s ease;    
+}
