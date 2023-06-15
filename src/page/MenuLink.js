@@ -13,6 +13,7 @@ function MenuLink() {
         <Link to="/datatable">Datatable</Link>
         <Link to="/upimg">Upload & Preview Img</Link>
         <Link to="/uselocation">Test Uselocation</Link>
+        <Link to="/popup">Popup</Link>
     </div>
   )
 }

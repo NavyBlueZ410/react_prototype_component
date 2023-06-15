@@ -11,6 +11,7 @@ import UPImg from './page/UPImg';
 import UseLocation from './page/UseLocation';
 import Location1 from './page/Location1';
 import Location2 from './page/Location2';
+import Popup from './page/Popup';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/uselocation" element={<UseLocation/>}></Route>
           <Route path="/location1" element={<Location1/>}></Route>
           <Route path="/location2" element={<Location2/>}></Route>
+          <Route path="/popup" element={<Popup/>}></Route>
         </Routes>
       </BrowserRouter>     
     </div>
